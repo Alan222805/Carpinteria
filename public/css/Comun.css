@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .superior h1 {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+  }
+  
+  .superior p {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 20px;
+    padding: 5px 20px;
+  }
+  
+  /*Estilos para el menu*/
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+  }
+  
+  header {
+    max-height: 20vh;
+    background-color: #d9a86c;
+  }
+  
+  header nav {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    max-height: 15vh;
+    position: relative;
+  }
+  
+  .logo {
+    max-height: 15vh;
+  }
+  
+  .logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .logo_carpinteria {
+    height: 60%;
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+  }
+  
+  header nav ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: #fff; */
+    width: auto;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 8px;
+  }
+  
+  nav ul li:nth-child(6) a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*Fin estilos para el menu*/
+  /*Estilos para el footer*/
+  footer {
+    max-height: 30vh;
+    background-color: #000;
+    margin-top: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  footer ul li a,
+  footer ul li {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+  }
+  
+  /*Fin estilos del footer*/
+  
+  li:hover > a {
+    color: white;
+    transform: scale(1.2);
+  }
+  
+  a {
+    transition: ease-in-out 0.3s;
+  }
+  
+  footer ul .item_footer:hover {
+    transform: scale(1.2);
+  }
+  
+  footer ul .item_footer {
+    transition: ease-in-out 0.3s;
+  }
