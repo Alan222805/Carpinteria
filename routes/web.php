@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -20,4 +21,8 @@ Route::get('/', function () {
 
 Route::controller(UserController::class) -> group(function(){
     Route::get('Cotizaciones', 'index');
+});
+
+Route::controller(AdminController::class) -> group(function(){
+    Route::get('Resumen_Ventas', 'resumenVentas');
 });
