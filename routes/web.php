@@ -19,10 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(UserController::class) -> group(function(){
+Route::controller(UserController::class)->group(function () {
     Route::get('Cotizaciones', 'index');
+    Route::get('Servicio_cliente', 'servicioCliente');
+    Route::get('Catalogo', 'catalogo');
 });
 
-Route::controller(AdminController::class) -> group(function(){
+Route::controller(AdminController::class)->group(function () {
     Route::get('Resumen_Ventas', 'resumenVentas');
 });

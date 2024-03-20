@@ -1,0 +1,11 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    color: #0D0D0D;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-text{
+    display: flex;
+
+}

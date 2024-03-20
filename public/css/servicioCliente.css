@@ -1,0 +1,120 @@
+/* Estilos generales */
+
+h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 2.5em;
+}
+h2 {
+    font-family: "Arial", sans-serif;
+    font-size: 2.5em;
+}
+p {
+    font-family: "Arial", sans-serif;
+    font-size: 1.5em;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("/imagenes/f.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 1em;
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-image: url("f.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#customer-service {
+    text-align: left;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.whatsapp-container {
+    text-align: right;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+footer p {
+    margin-top: 1em;
+}
+
+/* Estilos de botón de WhatsApp según la imagen proporcionada */
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: none;
+    position: relative; /* Para posicionar el icono de WhatsApp */
+    margin-top: 20px; /* Espacio antes del botón */
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25d366; /* Color verde de WhatsApp */
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 24px; /* Tamaño de la fuente */
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 70px 15px 15px; /* Ajusta el relleno para dar espacio al ícono */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: none;
+    position: relative; /* Para posicionar el icono de WhatsApp */
+    margin-top: 20px; /* Espacio antes del botón */
+}
+
+/* Estilo para el icono de WhatsApp */
+.whatsapp-logo {
+    height: 30px; /* Altura del icono */
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Ajusta la distancia desde la derecha */
+    transform: translateY(-50%);
+}
+
+@media (max-width: 480px) {
+    header,
+    footer {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .whatsapp-button {
+        width: 90%;
+    }
+}

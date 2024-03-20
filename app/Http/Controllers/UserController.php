@@ -10,4 +10,14 @@ class UserController extends Controller
     {
         return view('Cotizaciones');
     }
+
+    public function servicioCliente()
+    {
+        return view('Servicio_al_cliente');
+    }
+
+    public function catalogo()
+    {
+        return view('catalogo');
+    }
 }

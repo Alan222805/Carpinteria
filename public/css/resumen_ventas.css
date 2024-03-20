@@ -8,7 +8,7 @@
     border: 2px solid black;
 }
 
-.mes h2{
+.mes h2 {
     font-family: "Madimi One", sans-serif;
 }
 
@@ -45,7 +45,7 @@ p {
     background: linear-gradient(
         1deg,
         rgb(254, 254, 254) 0%,
-        rgb(87, 114, 252) 100%
+        rgb(242, 208, 167) 100%
     );
 }
 .informacion {
@@ -123,4 +123,8 @@ p {
     font-size: 20px;
     font-weight: bold;
     color: #f92e05;
+}
+
+p {
+    color: brown !important;
 }
