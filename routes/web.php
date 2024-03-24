@@ -28,3 +28,11 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(AdminController::class)->group(function () {
     Route::get('Resumen_Ventas', 'resumenVentas');
 });
+
+Route::view('/login', 'login')->name('login');
+Route::view('/registro', 'register')->name('registro');
+Route::view('/privada', 'secret')->name('privada');
+
+Route::post('/validar-registro', [LoginController::class, 'register'])->name('validar-registro');
+Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
