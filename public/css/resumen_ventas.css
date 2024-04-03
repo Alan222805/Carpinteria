@@ -1,7 +1,8 @@
 .titulo_pantalla {
     text-align: center;
-    font-family: "Madimi One", sans-serif;
+    font-family: "SF Pro Display";
     font-size: 64px;
+    letter-spacing: -.01em;
 }
 
 .mes {
@@ -9,12 +10,15 @@
 }
 
 .mes h2 {
-    font-family: "Madimi One", sans-serif;
-}
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+} 
 
-.subtitulo,
+h3,
 p {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+    letter-spacing: -.01em;
 }
 
 .contenedor_meses {
@@ -127,4 +131,34 @@ p {
 
 p {
     color: brown !important;
+}
+
+canvas {
+    max-width: 90%;
+    max-height: 500px;
+    margin-top: 25px;
+    display: flex;
+
+}
+.sales-chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px 100px;
+    align-items: center;
+}
+
+h2{
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+}
+.sales-chart span{
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+.sales-chart #chartLegend{
+    display: inline-block;
+    margin-top: 50px;
 }
