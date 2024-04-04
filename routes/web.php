@@ -30,6 +30,7 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(AdminController::class)->group(function () {
     Route::get('Resumen_Ventas', 'resumenVentas');
     Route::get('sales-by-month', 'salesByMonth');
+    Route::get('Resumen_Ventas', 'ventasPorMes');
 });
 
 Route::view('/login', 'login')->name('login');

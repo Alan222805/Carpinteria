@@ -1,3 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    padding: 0px 50px;
+    position: relative;
+}
+
 .titulo_pantalla {
     text-align: center;
     font-family: "SF Pro Display";
@@ -22,21 +33,54 @@ p {
 }
 
 .contenedor_meses {
-    display: grid;
-    grid-template-columns: 25% 35% 25%;
+    display: flex;
     gap: 3%;
-    justify-content: center;
     max-height: 500px;
     margin: 30px 0;
+    overflow: hidden;
+    position: relative;
+
 }
 
-.contenedor_meses .mes:nth-child(even) {
+#izquierda, #derecha{
+    background: rgba(112, 110, 110, 0.3);
+    border: none;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.flechas-carrusel button:hover{
+    transform: scale(1.2);   
+}
+
+.flechas-carrusel button:active{
+    transform: scale(1.1);
+}
+
+
+#izquierda i, #derecha i{
+    font-size: 50px;
+    color: #000;
+}
+
+.flechas-carrusel{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.contenedor_meses .mes {
     height: 500px;
+    min-width: 31.3%;
 }
 
-.contenedor_meses .mes:nth-child(odd) {
-    max-height: 400px;
-}
 
 .contenedor_meses .mes {
     display: flex;
@@ -78,7 +122,7 @@ p {
     height: 20px;
     width: 20px;
 }
-.informacion .subtitulo .btn_informacion:hover {
+.informacion .subtitulo .btn_informacion img:hover {
     cursor: pointer;
 }
 
@@ -90,48 +134,19 @@ p {
     justify-content: space-between;
 }
 
-.mes:nth-child(even) h2 {
+.mes h2 {
     font-size: 64px;
 }
-.mes:nth-child(even) .contenedor_informacion .subtitulo {
+.mes .contenedor_informacion .subtitulo {
     font-size: 24px;
     font-weight: 900;
 }
-.mes:nth-child(even) .contenedor_informacion p {
+.mes .contenedor_informacion p {
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
-}
-.mes:nth-child(even) .contenedor_informacion .informacion:last-child p {
-    font-size: 25px;
-    font-weight: bold;
-    color: #18ae00;
+    color: brown;
 }
 
-.mes:nth-child(odd) h2 {
-    font-size: 40px;
-}
-
-.mes:nth-child(odd) .contenedor_informacion .subtitulo {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.mes:nth-child(odd) .contenedor_informacion p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.mes:nth-child(odd) .contenedor_informacion .informacion:last-child p {
-    font-size: 20px;
-    font-weight: bold;
-    color: #f92e05;
-}
-
-p {
-    color: brown !important;
-}
 
 canvas {
     max-width: 90%;

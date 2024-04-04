@@ -20,4 +20,6 @@ class UserController extends Controller
     public function cotizaciones(){
         return view('Cotizaciones');
     }
+
+    
 }
