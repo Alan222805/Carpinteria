@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-main{
+main {
     padding: 0px 50px;
     position: relative;
 }
@@ -13,7 +13,7 @@ main{
     text-align: center;
     font-family: "SF Pro Display";
     font-size: 64px;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
 }
 
 .mes {
@@ -21,15 +21,15 @@ main{
 }
 
 .mes h2 {
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     font-weight: 600;
-} 
+}
 
 h3,
 p {
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     font-weight: 500;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
 }
 
 .contenedor_meses {
@@ -39,48 +39,50 @@ p {
     margin: 30px 0;
     overflow: hidden;
     position: relative;
-
+    scroll-behavior: smooth;
+    padding: 0 50px;
 }
 
-#izquierda, #derecha{
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#izquierda,
+#derecha {
+    position: absolute;
     background: rgba(112, 110, 110, 0.3);
     border: none;
     height: 65px;
     width: 65px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: 0.2s ease all;
+    z-index: 100;
 }
 
-.flechas-carrusel button:hover{
-    transform: scale(1.2);   
+#izquierda {
+    left: 0;
 }
 
-.flechas-carrusel button:active{
+#derecha {
+    right: 0;
+}
+
+.botones-carrusel:hover {
+    transform: scale(1.2);
+}
+
+.botones-carrusel:active {
     transform: scale(1.1);
 }
 
-
-#izquierda i, #derecha i{
+#izquierda i,
+#derecha i {
     font-size: 50px;
     color: #000;
 }
-
-.flechas-carrusel{
-    display: flex;
-    position: absolute;
-    justify-content: space-between;
-    min-width: 100%;
-    min-height: 100%;
-    padding: 0 20px;
-    align-items: center;
-}
-
-.contenedor_meses .mes {
-    height: 500px;
-    min-width: 31.3%;
-}
-
 
 .contenedor_meses .mes {
     display: flex;
@@ -95,51 +97,51 @@ p {
         rgb(254, 254, 254) 0%,
         rgb(242, 208, 167) 100%
     );
+
+    height: 500px;
+    min-width: 31.3%;
+
+    position: relative;
 }
 .informacion {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.informacion span {
+    font-family: "SF Pro Display", sans-serif;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
 }
 
 .informacion .subtitulo {
-    display: flex;
-    justify-content: space-between;
+    max-width: 100%;
     align-items: center;
+    font-size: 24px;
+    font-weight: 900;
 }
 
-.informacion .subtitulo .btn_informacion img {
-    height: 20px;
-}
-
-.informacion .subtitulo .btn_informacion {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: transparent;
-    height: 20px;
-    width: 20px;
-}
-.informacion .subtitulo .btn_informacion img:hover {
-    cursor: pointer;
+.informacion .subtitulo h3 {
+    text-align: center;
 }
 
 .mes .contenedor_informacion {
-    width: 90%;
+    max-width: 90%;
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
 }
 
 .mes h2 {
     font-size: 64px;
-}
-.mes .contenedor_informacion .subtitulo {
-    font-size: 24px;
-    font-weight: 900;
 }
 .mes .contenedor_informacion p {
     font-size: 20px;
@@ -147,15 +149,13 @@ p {
     color: brown;
 }
 
-
 canvas {
     max-width: 90%;
     max-height: 500px;
     margin-top: 25px;
     display: flex;
-
 }
-.sales-chart{
+.sales-chart {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,17 +163,25 @@ canvas {
     align-items: center;
 }
 
-h2{
-    font-family: 'SF Pro Display', sans-serif;
+h2 {
+    font-family: "SF Pro Display", sans-serif;
     font-size: 64px;
     font-weight: 600;
     text-align: center;
 }
-.sales-chart span{
-    font-family: 'SF Pro Display', sans-serif;
+.sales-chart span {
+    font-family: "SF Pro Display", sans-serif;
 }
 
-.sales-chart #chartLegend{
+.sales-chart #chartLegend {
     display: inline-block;
     margin-top: 50px;
+}
+
+.porcentajeCD.crecimiento {
+    color: rgb(54, 180, 54) !important;
+}
+
+.porcentajeCD.decrecimiento {
+    color: red !important;
 }

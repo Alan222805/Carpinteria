@@ -7,54 +7,56 @@
 @section('ContenidoPrincipal')
 <main>
     <h1 class="titulo_pantalla">Resumen de Ventas</h1>
-    <article class="contenedor_meses">
-        <div class="flechas-carrusel">
-            <button id="izquierda"><i class="fa-solid fa-angle-left"></i></button>
-            <button id="derecha"><i class="fa-solid fa-angle-right"></i></button>
-        </div>
-        @foreach($ventas as $venta)
-        <div class="mes">
-            @php
-                $meses = [
-                        1 => 'Enero',
-                        2 => 'Febrero',
-                        3 => 'Marzo',
-                        4 => 'Abril',
-                        5 => 'Mayo',
-                        6 => 'Junio',
-                        7 => 'Julio',
-                        8 => 'Agosto',
-                        9 => 'Septiembre',
-                        10 => 'Octubre',
-                        11 => 'Noviembre',
-                        12 => 'Diciembre'
-                    ];
-            @endphp
+    <div class="contenedor-carrusel">
+        <button class="botones-carrusel"  id="izquierda"><i class="fa-solid fa-angle-left"></i></button>
+        <article class="contenedor_meses">
 
-            <h2>{{ $meses[$venta -> Mes] }}</h2>
-            <div class="contenedor_informacion">
-                <div class="informacion">
-                    <span class="subtitulo">
-                        <h3>Numero de ventas</h3></button>
-                    </span>
-                    <p>{{$venta -> Cantidad_Ventas}} ventas</p>
-                </div>
-                <div class="informacion">
-                    <span class="subtitulo">
-                        <h3>Ingresos totales</h3></button>
-                    </span>
-                    <p>${{$venta -> Ganancias}}</p>
-                </div>
-                <div class="informacion">
-                    <span class="subtitulo">
-                        <h3>Crecimiento/Decrecimiento</h3></button>
-                    </span>
-                    <p> - 10% (↓) </p>
+            @foreach($ventas as $venta)
+            <div class="mes">
+                @php
+                $meses = [
+                1 => 'Enero',
+                2 => 'Febrero',
+                3 => 'Marzo',
+                4 => 'Abril',
+                5 => 'Mayo',
+                6 => 'Junio',
+                7 => 'Julio',
+                8 => 'Agosto',
+                9 => 'Septiembre',
+                10 => 'Octubre',
+                11 => 'Noviembre',
+                12 => 'Diciembre'
+                ];
+                @endphp
+
+                <h2>{{ $meses[$venta -> Mes] }}</h2>
+                <div class="contenedor_informacion">
+                    <div class="informacion">
+                        <div class="subtitulo">
+                            <h3>Numero de ventas</h3>
+                        </div>
+                        <p>{{$venta -> Cantidad_Ventas}} ventas</p>
+                    </div>
+                    <div class="informacion">
+                        <div class="subtitulo">
+                            <h3>Ingresos totales</h3>
+                        </div>
+                        <span>$<p class="ganancias">{{$venta -> Ganancias}}</p></span>
+                    </div>
+                    <div class="informacion">
+                        <div class="subtitulo">
+                            <h3>Crecimiento / Decrecimiento</h3>
+                        </div>
+                        <p class="porcentajeCD"> - 10% (↓) </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        @endforeach
-    </article>
+            @endforeach
+
+        </article>
+        <button class="botones-carrusel" id="derecha"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
     <div class="sales-chart">
         <h2>Grafica de ventas por mes</h2>
         <div id="chartLegend">
@@ -67,67 +69,10 @@
         </div>
         <canvas id="salesChart"></canvas>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        fetch('/sales-by-month')
-            .then(response => response.json())
-            .then(data => {
-                const ctx = document.getElementById('salesChart').getContext('2d');
+    <script src="/js/Administrador/Resumen_Ventas.js">
 
-                // Función para obtener el nombre del mes a partir del número
-                const getMonthName = (monthNumber) => {
-                    const date = new Date();
-                    date.setMonth(monthNumber - 1); // Los meses en JavaScript son base 0
-                    return date.toLocaleString('es', {
-                        month: 'long'
-                    });
-                };
-
-                // Preparar los colores de las barras
-                const backgroundColors = data.map((item, index) => {
-                    if (index === 0) { // Para el primer elemento, asume verde porque no hay mes anterior con el que comparar
-                        return 'rgba(24, 174, 0, 0.2)'; // Verde
-                    } else {
-                        // Si las ventas del mes actual son menores que el mes anterior, usa rojo
-                        return item.total < data[index - 1].total ? 'rgba(249, 5, 5, 0.3)' : 'rgba(24, 174, 0, 0.3)';
-                    }
-                });
-
-                // Preparar los colores de los bordes de las barras
-                const borderColors = data.map((item, index) => {
-                    if (index === 0) { // Para el primer elemento, asume verde porque no hay mes anterior con el que comparar
-                        return 'rgba(24, 174, 0, 1)'; // Verde
-                    } else {
-                        // Si las ventas del mes actual son menores que el mes anterior, usa rojo
-                        return item.total < data[index - 1].total ? 'rgba(249, 5, 5, 1' : 'rgba(24, 174, 0, 1)';
-                    }
-                });
-
-                const salesChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: data.map(item => `${getMonthName(item.month)} ${item.year}`),
-                        datasets: [{
-                            data: data.map(item => item.total),
-                            backgroundColor: backgroundColors, // Usa el array de colores
-                            borderColor: borderColors, // Usa el array de colores
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                display: false // Aquí se desactiva la leyenda
-                            }
-                        }
-                    }
-                });
-            });
     </script>
 </main>
 @endsection
