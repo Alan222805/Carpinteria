@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ Route::get('/', function () {
 Route::controller(UserController::class)->group(function () {
     Route::get('Cotizaciones', 'index');
     Route::get('Servicio_cliente', 'servicioCliente');
-    Route::get('Catalogo', 'catalogo');
+    // Route::get('Catalogo', 'catalogo');
 });
 
 Route::controller(AdminController::class)->group(function () {
@@ -36,3 +38,26 @@ Route::view('/privada', 'secret')->name('privada');
 Route::post('/validar-registro', [LoginController::class, 'register'])->name('validar-registro');
 Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+//Rutas Para productos
+// Ruta para mostrar la lista de productos
+Route::get('/productos', [ProductoController::class, 'index'])->name('catalogo');
+
+// Ruta que muestra el formulario para crear un nuevo producto
+Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
+
+// Ruta para almacenar un nuevo producto en la base de datos
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+
+// Ruta para mostrar un solo producto
+Route::get('/productos/{id}', [ProductoController::class, 'show'])->name('productos.show');
+
+// Ruta que muestra el formulario para editar un producto existente
+Route::get('/productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
+
+// Ruta para actualizar un producto en la base de datos
+Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
+
+// Ruta para eliminar un producto de la base de datos
+Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
