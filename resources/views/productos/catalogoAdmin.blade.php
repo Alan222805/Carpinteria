@@ -103,6 +103,7 @@
             </div>
         </main>
     </div>
+    <br>
     <div class="container mt-3">
         <a href="{{ route('productos.create') }}" class="btn btn-success">Agregar un nuevo producto</a>
     </div>

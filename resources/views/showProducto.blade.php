@@ -57,9 +57,8 @@
         <img src="{{ Storage::url($producto->imagen) }}" alt="{{ $producto->nombre }}">
         <p>{{ $producto->descripcion }}</p>
         <p><strong>Precio:</strong> ${{ $producto->precio }}</p>
-        <a href="{{ route('productos.catalogoAdmin') }}" class="btn btn-info">Volver a la lista</a>
+        <a href="{{ route('catalogo') }}" class="btn btn-info">Volver a la lista</a>
     </div>
 </body>
 
 </html>
-

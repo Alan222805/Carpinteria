@@ -40,9 +40,9 @@ Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-s
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-//Rutas Para productos
+//Rutas Para productos Administrador
 // Ruta para mostrar la lista de productos
-Route::get('/productos', [ProductoController::class, 'index'])->name('catalogo');
+Route::get('/productosAdmin', [ProductoController::class, 'index'])->name('productos.catalogoAdmin');
 
 // Ruta que muestra el formulario para crear un nuevo producto
 Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
@@ -51,7 +51,7 @@ Route::get('/productos/create', [ProductoController::class, 'create'])->name('pr
 Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
 
 // Ruta para mostrar un solo producto
-Route::get('/productos/{id}', [ProductoController::class, 'show'])->name('productos.show');
+Route::get('/productosAdmin/{id}', [ProductoController::class, 'show'])->name('productos.show');
 
 // Ruta que muestra el formulario para editar un producto existente
 Route::get('/productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
@@ -61,3 +61,9 @@ Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('prod
 
 // Ruta para eliminar un producto de la base de datos
 Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+
+
+//Ruta para Productos Cliente
+Route::get('/productos', [ProductoController::class, 'indexCliente'])->name('catalogo');
+// Ruta para mostrar un solo producto en vista Cliente
+Route::get('/productos/{id}', [ProductoController::class, 'showCliente'])->name('showProducto');

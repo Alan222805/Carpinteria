@@ -11,6 +11,12 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::all();
+        return view('productos.catalogoAdmin', compact('productos'));
+    }
+
+    public function indexCliente()
+    {
+        $productos = Producto::all();
         return view('catalogo', compact('productos'));
     }
 
@@ -36,13 +42,19 @@ class ProductoController extends Controller
         $producto->imagen = $path;
         $producto->save();
 
-        return redirect()->route('catalogo');
+        return redirect()->route('productos.catalogoAdmin');
     }
 
     public function show($id)
     {
         $producto = Producto::findOrFail($id);
         return view('productos.show', compact('producto'));
+    }
+
+    public function showCliente($id)
+    {
+        $producto = Producto::findOrFail($id);
+        return view('showProducto', compact('producto'));
     }
 
     public function edit($id)
@@ -72,13 +84,13 @@ class ProductoController extends Controller
         $producto->precio = $request->precio;
         $producto->save();
 
-        return redirect()->route('catalogo');
+        return redirect()->route('productos.catalogoAdmin');
     }
 
     public function destroy($id)
     {
         $producto = Producto::findOrFail($id);
         $producto->delete();
-        return redirect()->route('catalogo');
+        return redirect()->route('productos.catalogoAdmin');
     }
 }

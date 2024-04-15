@@ -103,10 +103,11 @@
             </div>
         </main>
     </div>
-    <div class="container mt-3">
+    <br>
+    {{-- <div class="container mt-3">
         <a href="{{ route('productos.create') }}" class="btn btn-success">Agregar un nuevo producto</a>
     </div>
-    <br>
+    <br> --}}
     <div class="container mt-3">
         <div class="row">
             @foreach ($productos as $producto)
@@ -116,13 +117,13 @@
                         <h4 class="card-title">{{ $producto->nombre }}</h4>
                         <p class="card-text">{{ $producto->descripcion }}</p>
                         <p class="card-text">Precio: ${{ $producto->precio }}</p>
-                        <a href="{{ route('productos.show', $producto->id) }}" class="btn btn-primary">Ver mas...</a>
-                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning">Editar</a>
+                        <a href="{{ route('showProducto', $producto->id) }}" class="btn btn-primary">Ver mas...</a>
+                        {{-- <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning">Editar</a>
                         <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
                 <br>
