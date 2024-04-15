@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/showProductos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Informacion del Producto</title>
@@ -58,6 +59,12 @@
         <p>{{ $producto->descripcion }}</p>
         <p><strong>Precio:</strong> ${{ $producto->precio }}</p>
         <a href="{{ route('catalogo') }}" class="btn btn-info">Volver a la lista</a>
+        <div class="whatsapp-container">
+            <a href="https://wa.me/5652279919?text=Bienbenido al servicio al cliente" class="whatsapp-button">
+                Presiona aquí para recibir ayuda
+                <img src="/imagenes/wlogo.png" alt="WhatsApp" class="whatsapp-logo" />
+            </a>
+        </div>
     </div>
 </body>
 

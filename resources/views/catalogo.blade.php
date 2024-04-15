@@ -118,12 +118,6 @@
                         <p class="card-text">{{ $producto->descripcion }}</p>
                         <p class="card-text">Precio: ${{ $producto->precio }}</p>
                         <a href="{{ route('showProducto', $producto->id) }}" class="btn btn-primary">Ver mas...</a>
-                        {{-- <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning">Editar</a>
-                        <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </form> --}}
                     </div>
                 </div>
                 <br>
