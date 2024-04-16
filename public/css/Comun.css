@@ -68,8 +68,9 @@
   header nav ul li a {
     text-decoration: none;
     color: #000;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bolder;
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 550;
+    letter-spacing: -.01em;
   }
   
   header nav ul li {
@@ -115,7 +116,8 @@
   footer ul li {
     text-decoration: none;
     color: #fff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'SF Pro Text', sans-serif;
+    letter-spacing: -.01em;
     font-weight: bolder;
   }
   
