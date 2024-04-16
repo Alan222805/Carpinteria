@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        return view('Cotizaciones');
-    }
-
     public function servicioCliente()
     {
         return view('Servicio_al_cliente');
@@ -20,4 +16,10 @@ class UserController extends Controller
     {
         return view('catalogo');
     }
+
+    public function cotizaciones(){
+        return view('Cotizaciones');
+    }
+
+    
 }

@@ -1,7 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 0px 50px;
+    position: relative;
+}
+
 .titulo_pantalla {
     text-align: center;
-    font-family: "Madimi One", sans-serif;
+    font-family: "SF Pro Display";
     font-size: 64px;
+    letter-spacing: -0.01em;
 }
 
 .mes {
@@ -9,29 +21,67 @@
 }
 
 .mes h2 {
-    font-family: "Madimi One", sans-serif;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: 600;
 }
 
-.subtitulo,
+h3,
 p {
-    font-family: "Montserrat", sans-serif;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 .contenedor_meses {
-    display: grid;
-    grid-template-columns: 25% 35% 25%;
+    display: flex;
     gap: 3%;
-    justify-content: center;
     max-height: 500px;
     margin: 30px 0;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    padding: 0 50px;
 }
 
-.contenedor_meses .mes:nth-child(even) {
-    height: 500px;
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.contenedor_meses .mes:nth-child(odd) {
-    max-height: 400px;
+#izquierda,
+#derecha {
+    position: absolute;
+    background: rgba(112, 110, 110, 0.3);
+    border: none;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease all;
+    z-index: 100;
+}
+
+#izquierda {
+    left: 0;
+}
+
+#derecha {
+    right: 0;
+}
+
+.botones-carrusel:hover {
+    transform: scale(1.2);
+}
+
+.botones-carrusel:active {
+    transform: scale(1.1);
+}
+
+#izquierda i,
+#derecha i {
+    font-size: 50px;
+    color: #000;
 }
 
 .contenedor_meses .mes {
@@ -47,84 +97,91 @@ p {
         rgb(254, 254, 254) 0%,
         rgb(242, 208, 167) 100%
     );
+
+    height: 500px;
+    min-width: 31.3%;
+
+    position: relative;
 }
 .informacion {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.informacion span {
+    font-family: "SF Pro Display", sans-serif;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
 }
 
 .informacion .subtitulo {
-    display: flex;
-    justify-content: space-between;
+    max-width: 100%;
     align-items: center;
+    font-size: 24px;
+    font-weight: 900;
 }
 
-.informacion .subtitulo .btn_informacion img {
-    height: 20px;
-}
-
-.informacion .subtitulo .btn_informacion {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: transparent;
-    height: 20px;
-    width: 20px;
-}
-.informacion .subtitulo .btn_informacion:hover {
-    cursor: pointer;
+.informacion .subtitulo h3 {
+    text-align: center;
 }
 
 .mes .contenedor_informacion {
-    width: 90%;
+    max-width: 90%;
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
 }
 
-.mes:nth-child(even) h2 {
+.mes h2 {
     font-size: 64px;
 }
-.mes:nth-child(even) .contenedor_informacion .subtitulo {
-    font-size: 24px;
-    font-weight: 900;
-}
-.mes:nth-child(even) .contenedor_informacion p {
+.mes .contenedor_informacion p {
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
-}
-.mes:nth-child(even) .contenedor_informacion .informacion:last-child p {
-    font-size: 25px;
-    font-weight: bold;
-    color: #18ae00;
+    color: brown;
 }
 
-.mes:nth-child(odd) h2 {
-    font-size: 40px;
+canvas {
+    max-width: 90%;
+    max-height: 500px;
+    margin-top: 25px;
+    display: flex;
+}
+.sales-chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px 100px;
+    align-items: center;
 }
 
-.mes:nth-child(odd) .contenedor_informacion .subtitulo {
-    font-size: 18px;
-    font-weight: 900;
+h2 {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+}
+.sales-chart span {
+    font-family: "SF Pro Display", sans-serif;
 }
 
-.mes:nth-child(odd) .contenedor_informacion p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+.sales-chart #chartLegend {
+    display: inline-block;
+    margin-top: 50px;
 }
 
-.mes:nth-child(odd) .contenedor_informacion .informacion:last-child p {
-    font-size: 20px;
-    font-weight: bold;
-    color: #f92e05;
+.porcentajeCD.crecimiento {
+    color: rgb(54, 180, 54) !important;
 }
 
-p {
-    color: brown !important;
+.porcentajeCD.decrecimiento {
+    color: red !important;
 }
