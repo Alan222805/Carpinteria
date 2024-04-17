@@ -5,7 +5,7 @@
   }
   
   .superior h1 {
-    font-family: "Madimi One", sans-serif;
+    font-family: "SF Pro Text", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 64px;
@@ -40,6 +40,7 @@
     grid-template-columns: 20% 80%;
     max-height: 15vh;
     position: relative;
+    padding-right: 50px;
   }
   
   .logo {
@@ -63,9 +64,10 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    min-height: 100%;
   }
   
-  header nav ul li a {
+  header nav ul .nav-item .nav-link {
     text-decoration: none;
     color: #000;
     font-family: 'SF Pro Text', sans-serif;
@@ -73,11 +75,7 @@
     letter-spacing: -.01em;
   }
   
-  header nav ul li {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* background-color: #fff; */
+  header nav ul .nav-item {
     width: auto;
     height: auto;
     text-align: center;
@@ -88,7 +86,7 @@
     padding: 8px;
   }
   
-  nav ul li:nth-child(6) a {
+  nav ul .nav-item:nth-child(3) .nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,12 +121,12 @@
   
   /*Fin estilos del footer*/
   
-  li:hover > a {
+.nav-item .nav-link:hover{
     color: white;
     transform: scale(1.2);
   }
   
-  a {
+  .nav-link {
     transition: ease-in-out 0.3s;
   }
   

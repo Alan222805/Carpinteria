@@ -3,28 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
     public function register(Request $request)
     {
-$user = new User();
+        $user = new User();
 
-$user->name = $request->name;
-$user->email = $request->email;
-$user->password = Hash::make($request->password);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
 
-$user->save();
+        $user->save();
 
-Auth::login($user);
+        Auth::login($user);
 
-return redirect(route('privada'));
-
+        return redirect(route('privada'));
     }
 
 
 
-    
+
     public function login(Request $request)
     {
         $credentials = [
@@ -32,16 +34,15 @@ return redirect(route('privada'));
             "password" => $request->password,
             "active" => true
         ];
-        
+
         $remember = ($request->has('remember') ? true : false);
-       
-        
+
+
         if (Auth::attempt($credentials, $remember)) {
             // El usuario está ahora autenticado y ha sido redirigido...
         } else {
             return redirect('login');
         }
-        
     }
 
     public function logout(Request $request)
@@ -51,6 +52,5 @@ return redirect(route('privada'));
         $request->session()->regenerateToken();
 
         return redirect(route('login'));
-
     }
 }

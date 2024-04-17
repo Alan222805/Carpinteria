@@ -104,7 +104,7 @@ footer p {
     transform: translateY(-50%);
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     header,
     footer {
         text-align: center;
@@ -117,4 +117,4 @@ footer p {
     .whatsapp-button {
         width: 90%;
     }
-}
+} */

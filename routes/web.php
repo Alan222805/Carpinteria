@@ -1,71 +1,44 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductoController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Auth;
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('Cotizaciones', 'index');
+    Route::get('Cotizaciones', 'cotizaciones');
     Route::get('Servicio_cliente', 'servicioCliente');
-    // Route::get('Catalogo', 'catalogo');
 });
 
 Route::controller(AdminController::class)->group(function () {
-    Route::get('Resumen_Ventas', 'resumenVentas');
-    Route::get('sales-by-month', 'salesByMonth');
-    Route::get('Resumen_Ventas', 'ventasPorMes');
+    Route::get('Resumen_Ventas', 'resumenVentas'); // Asegúrate de tener un solo endpoint para Resumen_Ventas
 });
 
-Route::view('/login', 'login')->name('login');
-Route::view('/registro', 'register')->name('registro');
-Route::view('/privada', 'secret')->name('privada');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::post('/validar-registro', [LoginController::class, 'register'])->name('validar-registro');
-Route::post('/inicia-sesion', [LoginController::class, 'login'])->name('inicia-sesion');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// Acciones de autenticación
+Route::post('/validar-registro', [AuthController::class, 'register'])->name('validar-registro');
+Route::post('/inicia-sesion', [AuthController::class, 'login'])->name('inicia-sesion');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // Usar POST para logout
 
+// Rutas de productos para admin
+Route::controller(ProductoController::class)->group(function () {
+    Route::get('/productosAdmin', 'index')->name('productos.catalogoAdmin');
+    Route::get('/productos/create', 'create')->name('productos.create');
+    Route::post('/productos', 'store')->name('productos.store');
+    Route::get('/productosAdmin/{id}', 'show')->name('productos.show');
+    Route::get('/productos/{id}/edit', 'edit')->name('productos.edit');
+    Route::put('/productos/{id}', 'update')->name('productos.update');
+    Route::delete('/productos/{id}', 'destroy')->name('productos.destroy');
+});
 
-//Rutas Para productos Administrador
-// Ruta para mostrar la lista de productos
-Route::get('/productosAdmin', [ProductoController::class, 'index'])->name('productos.catalogoAdmin');
-
-// Ruta que muestra el formulario para crear un nuevo producto
-Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
-
-// Ruta para almacenar un nuevo producto en la base de datos
-Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
-
-// Ruta para mostrar un solo producto
-Route::get('/productosAdmin/{id}', [ProductoController::class, 'show'])->name('productos.show');
-
-// Ruta que muestra el formulario para editar un producto existente
-Route::get('/productos/{id}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
-
-// Ruta para actualizar un producto en la base de datos
-Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
-
-// Ruta para eliminar un producto de la base de datos
-Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
-
-
-//Ruta para Productos Cliente
-Route::get('/productos', [ProductoController::class, 'indexCliente'])->name('catalogo');
-// Ruta para mostrar un solo producto en vista Cliente
+// Rutas de productos para clientes
+Route::get('/', [ProductoController::class, 'indexCliente'])->name('catalogo');
 Route::get('/productos/{id}', [ProductoController::class, 'showCliente'])->name('showProducto');
+

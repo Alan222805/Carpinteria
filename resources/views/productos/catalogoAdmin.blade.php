@@ -8,13 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <title>Catalogo</title>
+    
 </head>
 
 <body>
     <div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="/imagenes/logo.webp" alt="Avatar Logo" style="width:70px;" class="rounded-pill">
                 </a>
             </div>
@@ -23,38 +24,19 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nuevos Productos</a>
+                <li class="nav-item">
+                        <a class="nav-link" href="/">Vista Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ofertas Especiales</a>
+                        <a class="nav-link" href="register">Añadir Admin</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Categorias</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Link</a></li>
-                            <li><a class="dropdown-item" href="#">Another link</a></li>
-                            <li><a class="dropdown-item" href="#">A third link</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Precio</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">$100 - $500</a></li>
-                            <li><a class="dropdown-item" href="#">$500 - $1000</a></li>
-                            <li><a class="dropdown-item" href="#">$1000 - $5000</a></li>
-                            <li><a class="dropdown-item" href="#">$5000 - $1000+++</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Resumen_Ventas">Resumen de ventas</a>
                     </li>
                 </ul>
             </div>
     </div>
     </nav>
-    </div>
-    <div class="titulo">
-        <h1>Catalogo de Productos</h1>
     </div>
     <div>
         <main>
@@ -73,6 +55,23 @@
                     <div class="carousel-item active">
                         <img src="/imagenes/carrusel1.jpg" alt="Carrusel1" class="d-block" style="width:100%">
                         <div class="carousel-caption">
+                            <h1><big><big><big><big><big></big><big>Catalogo de Productos</big></big></big></big></big></h1>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <h3>Muebleria el Castor</h3>
                             <p>El interior de tu hogar podria verse asi!</p>
                         </div>
@@ -80,6 +79,23 @@
                     <div class="carousel-item">
                         <img src="/imagenes/carrusel2.jpg" alt="Carrusel2" class="d-block" style="width:100%">
                         <div class="carousel-caption">
+                            <h1><big><big><big><big><big></big><big>Catalogo de Productos</big></big></big></big></big></h1>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <h3>Muebleria el Castor</h3>
                             <p>El interior de tu hogar podria verse asi!</p>
                         </div>
@@ -87,6 +103,23 @@
                     <div class="carousel-item">
                         <img src="/imagenes/carrusel3.jpg" alt="Carrusel1" class="d-block" style="width:100%">
                         <div class="carousel-caption">
+                            <h1><big><big><big><big><big></big><big>Catalogo de Productos</big></big></big></big></big></h1>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <h3>Muebleria el Castor</h3>
                             <p>El interior de tu hogar podria verse asi!</p>
                         </div>

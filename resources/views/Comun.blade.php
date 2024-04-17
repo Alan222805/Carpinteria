@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carpinteria el castor</title>
     @yield('estilos')
     <link rel="stylesheet" href="/css/Comun.css">
 </head>
@@ -14,15 +14,10 @@
                 <a href=""><img src="/imagenes/logo.jpg" alt="" class="logo_carpinteria"></a>
             </div>
             <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Cotizaciones</a></li>
-                <li><a href="#">Cotizaciones</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Ayuda y Soporte</a></li>
-                <li><a href="#"><img src="/imagenes/image.png" alt="" width="40px">Inicia sesión o registrate</a></li>
-                <li><a href="#"><img src="/imagenes/carrito.png" alt="" width="64px">
-                    </a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Productos</a></li>
                 
+                <li class="nav-item"><a class="nav-link" href="Servicio_cliente">Ayuda y Soporte</a></li>
+                <li class="nav-item"><a class="nav-link" href="login"><img src="/imagenes/image.png" alt="" width="40px">Inicia sesión o registrate</a></li>
             </ul>
         </nav>
     </header>

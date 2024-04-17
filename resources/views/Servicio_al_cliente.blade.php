@@ -2,7 +2,6 @@
 
 @section('estilos')
 <link rel="stylesheet" href="/css/servicioCliente.css">
-<link rel="stylesheet" href="C:\Users\Alanj\ArquitecturaDeSoftware\Proyecto_Carpinteria\Carpinteria\resources\views\Servicio_al_cliente.blade.php">
 @endsection
 
 @section('ContenidoPrincipal')
