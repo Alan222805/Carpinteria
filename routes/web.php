@@ -14,6 +14,8 @@ Route::controller(UserController::class)->group(function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('Resumen_Ventas', 'resumenVentas'); // Asegúrate de tener un solo endpoint para Resumen_Ventas
+    Route::get('sales-by-month', 'salesByMonth');
+    Route::get('Resumen_Ventas', 'ventasPorMes');
 });
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');

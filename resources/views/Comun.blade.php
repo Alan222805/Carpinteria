@@ -11,10 +11,11 @@
     <header id="menu">
         <nav>
             <div class="logo">
-                <a href=""><img src="/imagenes/logo.jpg" alt="" class="logo_carpinteria"></a>
+                <a href="/"><img src="/imagenes/logo.jpg" alt="" class="logo_carpinteria"></a>
             </div>
             <ul>
                 <li class="nav-item"><a class="nav-link" href="/">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="Cotizaciones">Cotizaciones</a></li>
                 
                 <li class="nav-item"><a class="nav-link" href="Servicio_cliente">Ayuda y Soporte</a></li>
                 <li class="nav-item"><a class="nav-link" href="login"><img src="/imagenes/image.png" alt="" width="40px">Inicia sesión o registrate</a></li>

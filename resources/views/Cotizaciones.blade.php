@@ -61,10 +61,7 @@
                         placeholder="Describe tu mueble deseado "></textarea>
                 </div>
 
-                <div class="imagen_referencia">
-                    <label for="">Imágen de referencia</label>
-                    <input type="file" id="referencia">
-                </div>
+                
                 <br>
                 <hr>
                 <h4>Información personal</h4>
@@ -94,8 +91,6 @@
 
                 <input class="dimensiones" type="number" id="largo_espacio" min="0" placeholder="Largo">
 
-                <label for="imagen_espacio">Imagen del espacio (espacio en el que colocarás tu mueble)</label> 
-                <input class="img_espacio" type="file" id="img_espacio">
 
                 <br>
 

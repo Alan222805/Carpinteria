@@ -14,7 +14,7 @@ class AdminController extends Controller
 
     public function salesByMonth()
     {
-        $sales = DB::table('Compras')
+        $sales = DB::table('compras')
         ->select(
             DB::raw('SUM(total_pagado) as total'),
             DB::raw('MONTH(fecha) as month'),

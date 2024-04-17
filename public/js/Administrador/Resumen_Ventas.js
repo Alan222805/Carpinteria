@@ -104,29 +104,13 @@ flechaDerecha.addEventListener('click', () =>  {
     
 })
 
-if(carrusel.scrollLeft == 1744){
-    setTimeout(function(){
-        flechaDerecha.style.display = 'none';
-    },2000)
-}else if(carrusel.scrollLeft < 1744.800048828125){
-    setTimeout(function(){
-        flechaDerecha.style.display = 'block';
-    },2000)
-}
+
 
 
 // ? Event Listener para la flecha izquierda
 
 flechaIzquierda.addEventListener('click', () =>  {
     carrusel.scrollLeft -= 400;
-    
-    setTimeout(function(){
-        if(carrusel.scrollLeft == 0){
-            flechaIzquierda.style.display = 'none';
-        }else if(carrusel.scrollLeft > 0){
-            flechaIzquierda.style.display = 'block';
-        }
-    },5000)
 })
 
 
