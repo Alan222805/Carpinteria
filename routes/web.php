@@ -8,7 +8,8 @@ use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Auth;
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('Cotizaciones', 'cotizaciones');
+    Route::get('Cotizaciones', 'cotizaciones')->name('Cotizaciones.user');
+    Route::post('Cotizaciones', 'store')->name('cotizacion.store');;
     Route::get('Servicio_cliente', 'servicioCliente');
 });
 
